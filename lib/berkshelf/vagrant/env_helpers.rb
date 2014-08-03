@@ -101,6 +101,7 @@ module Berkshelf
       private
 
         def berks_version_check!
+          ENV['GEM_PATH'] = "#{ENV['HOME']}/.gem/ruby/1.9.3"
           if (exec = Which.which("berks")).nil?
             raise BerksNotFound
           end
